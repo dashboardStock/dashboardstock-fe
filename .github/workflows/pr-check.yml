@@ -1,0 +1,40 @@
+name: PR CHECK
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUSKY: 0
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Next.js Build
+        run: npm run build
+
+      - name: Check Build Success
+        if: success()
+        run: echo "✅ Build successful!"
+
+      - name: Fail on Build Error
+        if: failure()
+        run: |
+          echo "❌ Build failed!"
+          exit 1
