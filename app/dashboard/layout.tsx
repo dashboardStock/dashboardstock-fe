@@ -13,12 +13,18 @@ const Layout = styled.div`
 
 export default function DashboardLayout({
   children,
+  graph,
+  news,
 }: Readonly<{
   children: React.ReactNode;
+  graph: React.ReactNode;
+  news: React.ReactNode;
 }>) {
   return (
     <Layout>
       <Header />
+      {graph}
+      {news}
       <div>{children}</div>
     </Layout>
   );
