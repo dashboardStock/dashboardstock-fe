@@ -1,60 +1,77 @@
-import styled from "@emotion/styled";
 import Image from "next/image";
+import { css } from "@/styled-system/css";
 
-const SmallStockLayout = styled.div`
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: white;
-  border-radius: 10px;
-  width: 587px;
-  aspect-ratio: 587 / 150;
+const smallStockStyle = css({
+  padding: "20px",
+  boxSizing: "border-box",
+  backgroundColor: "white",
+  borderRadius: "10px",
+  width: "587px",
+  aspectRatio: "587 / 150",
+  display: "flex",
+  alignItems: "center",
 
-  display: flex;
-  align-items: center;
-`;
+  "& img": {
+    width: "110px",
+    height: "110px",
+  },
 
-const SmallStockText = styled.div<{ isRise: boolean }>`
-  display: flex;
-  h3 {
-    font-weight: 600;
-    color: #555555;
-    font-size: 20px;
-  }
+  "& > div": {
+    display: "flex",
+    flexDirection: "column",
+    marginLeft: "16px",
 
-  div {
-    width: 100%;
-    justify-content: space-between;
-    span:first-of-type {
-      font-size: 32px;
-      color: #252525;
-    }
+    "& h3": {
+      fontSize: "20px",
+      fontWeight: "600",
+      color: "#555",
+    },
 
-    span:last-of-type {
-      color: ${({ isRise }) => (isRise ? "red" : "blue")};
-    }
-  }
-`;
+    "& div": {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+
+      "& span:first-of-type": {
+        fontSize: "32px",
+        fontWeight: "bold",
+        color: "#252525",
+      },
+
+      "& span:last-of-type": {
+        fontSize: "16px",
+        fontWeight: "bold",
+      },
+    },
+  },
+});
+
+const changeStyle = (isRise: boolean) =>
+  css({
+    color: isRise ? "red.500" : "blue.500",
+  });
 
 export default function SmallStock() {
   const isRise = true;
 
   return (
-    <SmallStockLayout>
+    <div className={smallStockStyle}>
       <Image
         src="/image/testLogo.png"
         width={110}
         height={110}
         alt="stock logo"
       />
-      <SmallStockText isRise={isRise}>
+      <div>
         <h3>한국조선해양</h3>
         <div>
           <span>213,500</span>
-          <span>
+          <span className={changeStyle(isRise)}>
             {isRise ? "+" : "-"} 4,000 (1.9%) {isRise ? "▲" : "▼"} 오늘
           </span>
         </div>
-      </SmallStockText>
-    </SmallStockLayout>
+      </div>
+    </div>
   );
 }

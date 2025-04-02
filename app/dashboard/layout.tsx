@@ -1,15 +1,17 @@
-"use client";
-
 import Header from "@/components/Header";
-import styled from "@emotion/styled";
+import { styled } from "@styled-system/jsx";
 
-const Layout = styled.div`
-  width: 100vw;
-  height: 100vh;
-  box-sizing: border-box;
-  padding: 2.87vw 2.6vw 2.08vw 2.6vw;
-  background: #f7f9ff;
-`;
+const Layout = styled("div", {
+  base: {
+    width: "100vw",
+    height: "100vh",
+    boxSizing: "border-box",
+    padding: "2.87vw 2.6vw 2.08vw 2.6vw",
+    background: "#f7f9ff",
+    display: "flex",
+    flexDirection: "column",
+  },
+});
 
 export default function DashboardLayout({
   children,
