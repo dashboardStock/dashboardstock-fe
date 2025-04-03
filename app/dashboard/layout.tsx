@@ -13,6 +13,46 @@ const Layout = styled("div", {
   },
 });
 
+const GraphContainer = styled("div", {
+  base: {
+    width: "50.52vw",
+    aspectRatio: "970/720",
+    boxSizing: "border-box",
+    padding: "2vw",
+    background: "white",
+    borderRadius: "10px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    "&:hover": { outline: "1px solid #eaeaea" },
+  },
+});
+
+const NewsContainer = styled("div", {
+  base: {
+    width: "42.7vw",
+    aspectRatio: "820/720",
+    boxSizing: "border-box",
+    padding: "2vw",
+    background: "white",
+    borderRadius: "10px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    "&:hover": { outline: "1px solid #eaeaea" },
+  },
+});
+
+const Containers = styled("div", {
+  base: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: "1.56vw",
+    marginBottom: "1.56vw",
+  },
+});
+
 export default function DashboardLayout({
   children,
   graph,
@@ -25,9 +65,11 @@ export default function DashboardLayout({
   return (
     <Layout>
       <Header />
-      {graph}
-      {news}
-      <div>{children}</div>
+      <Containers>
+        <GraphContainer>{graph}</GraphContainer>
+        <NewsContainer>{news}</NewsContainer>
+      </Containers>
+      {children}
     </Layout>
   );
 }

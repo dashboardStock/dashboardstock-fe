@@ -1,77 +1,94 @@
 import Image from "next/image";
-import { css } from "@/styled-system/css";
+import { styled } from "@/styled-system/jsx";
 
-const smallStockStyle = css({
-  padding: "20px",
-  boxSizing: "border-box",
-  backgroundColor: "white",
-  borderRadius: "10px",
-  width: "587px",
-  aspectRatio: "587 / 150",
-  display: "flex",
-  alignItems: "center",
-
-  "& img": {
-    width: "110px",
-    height: "110px",
-  },
-
-  "& > div": {
+const SmallStockContainer = styled("div", {
+  base: {
+    padding: "1.04vw",
+    boxSizing: "border-box",
+    backgroundColor: "white",
+    borderRadius: "0.52vw",
+    width: "30.57vw",
+    aspectRatio: "587 / 150",
     display: "flex",
-    flexDirection: "column",
-    marginLeft: "16px",
-
-    "& h3": {
-      fontSize: "20px",
-      fontWeight: "600",
-      color: "#555",
-    },
-
-    "& div": {
-      width: "100%",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-
-      "& span:first-of-type": {
-        fontSize: "32px",
-        fontWeight: "bold",
-        color: "#252525",
-      },
-
-      "& span:last-of-type": {
-        fontSize: "16px",
-        fontWeight: "bold",
-      },
-    },
+    alignItems: "center",
+    "&:hover": { outline: "1px solid #eaeaea" },
   },
 });
 
-const changeStyle = (isRise: boolean) =>
-  css({
-    color: isRise ? "red.500" : "blue.500",
-  });
+const StockImageWrapper = styled("div", {
+  base: {
+    width: "5.73vw",
+    aspectRatio: "1",
+  },
+});
+
+const StockInfo = styled("div", {
+  base: {
+    flex: "1",
+    display: "flex",
+    flexDirection: "column",
+    marginLeft: "0.83vw",
+  },
+});
+
+const StockTitle = styled("h3", {
+  base: {
+    fontSize: "1.04vw",
+    fontWeight: "600",
+    color: "#555",
+  },
+});
+
+const StockDetails = styled("div", {
+  base: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+});
+
+const StockPrice = styled("span", {
+  base: {
+    fontSize: "1.67vw",
+    fontWeight: "semibold",
+    color: "#252525",
+  },
+});
+
+const StockChange = styled("span", {
+  base: {
+    fontSize: "0.83vw",
+  },
+  variants: {
+    isRise: {
+      true: { color: "red.500" },
+      false: { color: "blue.500" },
+    },
+  },
+});
 
 export default function SmallStock() {
   const isRise = true;
 
   return (
-    <div className={smallStockStyle}>
-      <Image
-        src="/image/testLogo.png"
-        width={110}
-        height={110}
-        alt="stock logo"
-      />
-      <div>
-        <h3>한국조선해양</h3>
-        <div>
-          <span>213,500</span>
-          <span className={changeStyle(isRise)}>
+    <SmallStockContainer>
+      <StockImageWrapper>
+        <Image
+          src="/image/testLogo.png"
+          width={110}
+          height={110}
+          alt="stock logo"
+        />
+      </StockImageWrapper>
+      <StockInfo>
+        <StockTitle>한국조선해양</StockTitle>
+        <StockDetails>
+          <StockPrice>213,500</StockPrice>
+          <StockChange isRise={isRise}>
             {isRise ? "+" : "-"} 4,000 (1.9%) {isRise ? "▲" : "▼"} 오늘
-          </span>
-        </div>
-      </div>
-    </div>
+          </StockChange>
+        </StockDetails>
+      </StockInfo>
+    </SmallStockContainer>
   );
 }

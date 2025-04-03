@@ -1,3 +1,4 @@
+import { css } from "@styled-system/css";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -17,6 +18,10 @@ export const metadata: Metadata = {
   description: "one page stock dashboard",
 };
 
+const bodyStyle = css({
+  overflow: "hidden",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -24,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${bodyStyle} ${geistSans.variable} ${geistMono.variable}`}
+      >
         {children}
       </body>
     </html>
