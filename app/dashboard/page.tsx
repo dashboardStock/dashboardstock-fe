@@ -3,9 +3,10 @@ import { styled } from "@styled-system/jsx";
 
 const StockContainer = styled("div", {
   base: {
-    width: "100vw",
+    maxWidth: "100vw",
+    overflow: "hidden",
     display: "flex",
-    gap: "1.56vw",
+    justifyContent: "space-between",
     flexWrap: "wrap",
   },
 });
