@@ -17,11 +17,20 @@ export default defineConfig({
 
   globalCss: {
     "*, *::before, *::after": {
-      scrollbarWidth: "none", // Firefox에서 스크롤 숨기기
-      msOverflowStyle: "none", // IE, Edge에서 스크롤 숨기기
+      scrollbarWidth: "none",
+      msOverflowStyle: "none",
     },
     "*::-webkit-scrollbar": {
-      display: "none", // Chrome, Safari에서 스크롤 숨기기
+      display: "none",
+    },
+    html: {
+      overflow: "hidden",
+      height: "100%",
+      width: "100%",
+    },
+    body: {
+      height: "100%",
+      width: "100%",
     },
   },
   jsxFramework: "react",
