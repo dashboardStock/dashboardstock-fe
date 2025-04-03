@@ -15,6 +15,24 @@ export default defineConfig({
     extend: {},
   },
 
+  globalCss: {
+    "*, *::before, *::after": {
+      scrollbarWidth: "none",
+      msOverflowStyle: "none",
+    },
+    "*::-webkit-scrollbar": {
+      display: "none",
+    },
+    html: {
+      overflow: "hidden",
+      height: "100%",
+      width: "100%",
+    },
+    body: {
+      height: "100%",
+      width: "100%",
+    },
+  },
   jsxFramework: "react",
 
   // The output directory for your css system
