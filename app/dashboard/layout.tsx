@@ -3,8 +3,6 @@ import { styled } from "@styled-system/jsx";
 
 const Layout = styled("div", {
   base: {
-    width: "100%",
-    height: "100%",
     boxSizing: "border-box",
     padding: "2.87vw 2.6vw 2.08vw 2.6vw",
     background: "#f7f9ff",
