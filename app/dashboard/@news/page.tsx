@@ -4,6 +4,7 @@ import FirstNews from "./_components/FirstNews";
 
 const NewsContainer = styled("div", {
   base: {
+    width: "100%",
     position: "relative",
     gap: "0.52vw",
     maxHeight: "100%",

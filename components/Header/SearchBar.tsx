@@ -7,7 +7,7 @@ import Search from "@/assets/svg/search.svg";
 
 const SearchBarContainer = styled("div", {
   base: {
-    width: { base: "100%", sm: "64.6vw" },
+    width: "100%",
     height: { base: "40px", sm: "60px" },
     borderRadius: { base: "7px", sm: "10px" },
     background: "white",

@@ -7,7 +7,7 @@ const SmallStockContainer = styled("div", {
     boxSizing: "border-box",
     backgroundColor: "white",
     borderRadius: "10px",
-    maxWidth: { sm: "30.57vw", base: "100%" },
+    width: { sm: "30.57vw", base: "100%" },
     minHeight: "80px",
     display: "flex",
     alignItems: "center",

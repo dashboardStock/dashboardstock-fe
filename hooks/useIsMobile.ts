@@ -4,7 +4,7 @@ export default function useIsMobile() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const checkWidth = () => setIsMobile(window.innerWidth < 360);
+    const checkWidth = () => setIsMobile(window.innerWidth < 800);
     checkWidth();
 
     window.addEventListener("resize", checkWidth);

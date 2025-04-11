@@ -15,6 +15,7 @@ const HeaderLayout = styled("header", {
 
 const NonLogo = styled("div", {
   base: {
+    width: "100%",
     display: "flex",
     flexDirection: { base: "column", sm: "row" },
     alignItems: { base: "end", sm: "center" },

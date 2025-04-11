@@ -40,11 +40,11 @@ const GraphContainer = styled("div", {
 
 const NewsContainer = styled("div", {
   base: {
+    width: { base: "100%", sm: "42.7vw" },
     flex: 1,
     aspectRatio: { base: "auto", sm: "820/720" },
     boxSizing: "border-box",
     overflow: "hidden",
-    width: { base: "100%", sm: "42.7vw" },
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
