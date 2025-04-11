@@ -1,4 +1,4 @@
-import { SetDataAction, StoreState } from "@/types/storeType";
+import { SetDataAction, StoreState } from "@/types/global";
 import { makeAutoObservable } from "mobx";
 
 export function createStore() {
