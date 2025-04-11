@@ -63,12 +63,15 @@ export default function DashboardLayout({
 }>) {
   return (
     <Layout>
-      <Header />
-      <Containers>
-        <GraphContainer>{graph}</GraphContainer>
-        <NewsContainer>{news}</NewsContainer>
-      </Containers>
-      {children}
+      <Main>
+        <Header />
+        <Containers>
+          <GraphContainer>{graph}</GraphContainer>
+          <NewsContainer>{news}</NewsContainer>
+        </Containers>
+        {children}
+      </Main>
+      <Navigation />
     </Layout>
   );
 }
