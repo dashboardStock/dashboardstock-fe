@@ -2,8 +2,8 @@ import { styled } from "@styled-system/jsx";
 
 export const NewsSource = styled("span", {
   base: {
-    fontSize: "0.73vw",
-    fontWeight: "bold",
+    fontSize: { base: "12px", sm: "16px" },
+    fontWeight: "semibold",
     color: "gray.500",
   },
 });
@@ -11,14 +11,14 @@ export const NewsSource = styled("span", {
 export const NewsDate = styled("span", {
   base: {
     color: "#555555",
-    fontSize: "0.73vw",
+    fontSize: { base: "10px", sm: "14px" },
   },
 });
 
 export const Line = styled("div", {
   base: {
     width: "100%",
-    height: "0.05vw",
+    height: "1px",
     backgroundColor: "#E6DCF5",
   },
 });

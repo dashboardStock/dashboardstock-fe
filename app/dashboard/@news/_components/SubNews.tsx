@@ -6,15 +6,16 @@ const SubNewsLayout = styled("div", {
     display: "flex",
     alignItems: "center",
     gap: "1.5vw",
+    padding: { base: "10px 0px" },
   },
 });
 
 const SubNewsThumbnail = styled("div", {
   base: {
-    width: "5.2vw",
+    width: { base: "80px", sm: "100px" },
     aspectRatio: "1",
     backgroundColor: "gray.300",
-    borderRadius: "0.26vw",
+    borderRadius: "5px",
   },
 });
 
@@ -26,30 +27,30 @@ const SubNewsText = styled("div", {
     flexDirection: "column",
     justifyContent: "space-between",
     cursor: "pointer",
+    gap: "10px",
   },
 });
 
 const NewsSubTitle = styled("p", {
   base: {
-    fontSize: "0.83vw",
+    fontSize: "14px",
+    fontWeight: "semibold",
     color: "#222",
   },
 });
 
-export default function SubNews() {
+export default function SubNews({ data }: { data: any }) {
   return (
-    <>
+    <a href={data.originalLink} target="_blank">
       <SubNewsLayout>
         <SubNewsThumbnail />
         <SubNewsText>
-          <NewsSource>연합뉴스</NewsSource>
-          <NewsSubTitle>
-            금감원, &apos;코스피 먹통&apos; 한국거래소 전산장애 살펴본다
-          </NewsSubTitle>
-          <NewsDate>23분전</NewsDate>
+          <NewsSource>{data.source}</NewsSource>
+          <NewsSubTitle>{data.title}</NewsSubTitle>
+          <NewsDate>{data.date}</NewsDate>
         </SubNewsText>
       </SubNewsLayout>
       <Line />
-    </>
+    </a>
   );
 }

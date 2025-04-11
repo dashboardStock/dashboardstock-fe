@@ -4,10 +4,20 @@ import { styled } from "@styled-system/jsx";
 const StockContainer = styled("div", {
   base: {
     maxWidth: "100vw",
+    background: "#f7f9ff",
     overflow: "hidden",
-    display: "flex",
     justifyContent: "space-between",
     flexWrap: "wrap",
+    display: "flex",
+    flexDirection: {
+      base: "column",
+      sm: "row",
+    },
+    gap: { base: "10px", sm: "0" },
+    alignItems: {
+      base: "center",
+      sm: "start",
+    },
   },
 });
 
