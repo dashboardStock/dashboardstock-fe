@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import Navigation from "@/components/Nav";
+import Navigation from "@/components/Navigation";
 import { styled } from "@styled-system/jsx";
 
 const Layout = styled("div", {
@@ -24,7 +24,7 @@ const Main = styled("main", {
 const GraphContainer = styled("div", {
   base: {
     aspectRatio: "970/720",
-    width: { base: "100vw", sm: "50.52vw" },
+    width: { base: "100%", sm: "50.52vw" },
     height: "auto",
     boxSizing: "border-box",
     padding: "2vw",

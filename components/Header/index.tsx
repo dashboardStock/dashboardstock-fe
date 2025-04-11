@@ -1,24 +1,15 @@
 import { styled } from "@styled-system/jsx";
-import Image from "next/image";
 import ToggleButton from "./ToggleButton";
 import SearchBar from "./SearchBar";
+import Logo from "./Logo";
 
 const HeaderLayout = styled("header", {
   base: {
     width: "100%",
-    height: { base: "auto", sm: "3.125vw" },
     display: "flex",
-    alignItems: "center",
+    alignItems: { base: "start", sm: "center" },
     justifyContent: "space-between",
     marginBottom: { base: "10px", sm: "2vw" },
-  },
-});
-
-const Logo = styled("div", {
-  base: {
-    width: { base: "96.17px", sm: "17.7vw" },
-    aspectRatio: { base: "96.17/30", sm: "340/30" },
-    position: "relative",
   },
 });
 
@@ -34,9 +25,7 @@ const NonLogo = styled("div", {
 export default function Header() {
   return (
     <HeaderLayout>
-      <Logo>
-        <Image src="/image/logo.png" fill alt="Logo" />
-      </Logo>
+      <Logo />
       <NonLogo>
         <SearchBar />
         <ToggleButton />

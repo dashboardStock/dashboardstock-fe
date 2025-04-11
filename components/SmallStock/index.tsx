@@ -6,9 +6,9 @@ const SmallStockContainer = styled("div", {
     padding: "10px",
     boxSizing: "border-box",
     backgroundColor: "white",
-    borderRadius: "0.52vw",
-    width: { sm: "30.57vw", base: "100%" },
-    maxHeight: "80px",
+    borderRadius: "10px",
+    maxWidth: { sm: "30.57vw", base: "100%" },
+    minHeight: "80px",
     display: "flex",
     alignItems: "center",
     "&:hover": { outline: "1px solid #eaeaea" },
@@ -17,7 +17,7 @@ const SmallStockContainer = styled("div", {
 
 const StockImageWrapper = styled("div", {
   base: {
-    width: { base: "60px", sm: "5.73vw" },
+    width: { base: "60px", sm: "70px" },
     aspectRatio: "1",
   },
 });
