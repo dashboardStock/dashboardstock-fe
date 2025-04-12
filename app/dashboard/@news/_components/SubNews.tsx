@@ -39,7 +39,7 @@ const NewsSubTitle = styled("p", {
   },
 });
 
-export default function SubNews({ data }: { data: any }) {
+export default function SubNews({ data }: { data: unknown }) {
   return (
     <a href={data.originalLink} target="_blank">
       <SubNewsLayout>

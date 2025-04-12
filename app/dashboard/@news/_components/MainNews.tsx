@@ -60,7 +60,7 @@ const MainNewsHead = styled("div", {
   },
 });
 
-export default function MainNews({ data }: { data: any }) {
+export default function MainNews({ data }: { data: unknown }) {
   return (
     <a href={data.originalLink} target="_blank">
       <MainNewsLayout>
